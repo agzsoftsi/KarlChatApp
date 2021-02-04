@@ -1,0 +1,158 @@
+.chat{
+    flex: 0.65;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat_header{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.chat_headerInfo{
+    flex: 1;
+    padding-left: 20px;
+}
+
+.chat_headerInfo > h3{
+    margin-bottom: 3px;
+    font-weight: 500;
+}
+
+.chat_headerInfo > p{
+    color: gray;
+}
+
+.chat_headerRight{
+    display: flex;
+    justify-content: space-between;
+    min-width: 100px;
+}
+
+.chat_body{
+    flex: 1;
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    background-repeat: repeat;
+    background-position: center;
+    padding: 30px;
+    overflow: scroll;
+}
+
+.chat_body::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.chat_body::-webkit-scrollbar:vertical {
+    width:10px;
+    background-color: lightgray;
+}
+.chat_body::-webkit-scrollbar-button:increment,.chat_body::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.chat_body::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.chat_body::-webkit-scrollbar-thumb {
+    background-color: #00b2b27c;
+    /*border-radius: 20px;*/
+   /* border: 1px solid black;*/
+}
+
+.chat_body::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+
+
+.chat_message{
+    max-width: 480px;
+    position: relative;
+    font-size: 16px;
+    padding: 20px 10px 10px 10px;
+    background-color: rgba(255, 255, 255, 0.575);
+    border-radius: 10px;
+    width: fit-content;
+    margin-bottom: 15px;
+    
+}
+
+.chat_name{
+    position: absolute;
+    top: 6px;
+    font-weight: 800;
+    font-size: xx-small;  
+    
+}
+
+.chat_timestamp{
+    margin-left: 10px;
+    font-size: xx-small;
+}
+
+.chat_reviever{
+    max-width: 480px;
+    margin-left: auto;
+    position: relative;
+    font-size: 16px;
+    padding: 20px 10px 10px 10px;
+    background-color: #00b2b27c;
+    /*background-color: rgb(215, 255, 188);*/
+    border-radius: 10px;
+    width: fit-content;
+    margin-bottom: 15px;
+}
+
+.chat_footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+    border-top: 1px solid lightgray;
+}
+
+.chat_footer > form {
+    flex: 1;
+    display: flex;
+    
+}
+
+.chat_footer > form > input {
+    flex: 1;
+    border-radius: 30px;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+.chat_footer > form > button{
+    display: none;
+}
+
+.chat_footer > .MuiSvgIcon-root{
+    padding: 10px;
+    color: gray;
+}
+
+.tail-g{
+    position:absolute;
+    right: -10px;
+    top: 10px;
+     width: 0;
+     height: 0;
+     border-left: 10px solid#00b2b27c;
+     border-top: 5px solid transparent;
+     border-bottom: 5px solid transparent; 
+}
+.tail{
+    position:absolute;
+    left: -10px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-right: 10px solid rgba(255, 255, 255, 0.575);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent; 
+}

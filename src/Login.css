@@ -1,0 +1,54 @@
+.login{
+background-color: #042E5E;
+height: 100vh;
+width: 100vw;
+display: grid;
+place-items: center;
+}
+
+.login_container{
+padding: 80px;
+text-align: center;
+background-color: white;
+border-radius: 10px;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px;
+font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.login_container > img{
+    object-fit: contain;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.login_container > button{
+    margin-top: 15px;
+    text-transform: inherit !important;
+    background-color: #00B2B2 !important;
+    color: white;
+}
+
+.karl-text{
+    color: #042E5E;
+    
+}
+.chat-text{
+    color:#00B2B2;
+    
+}
+
+.social-icons{
+    margin-top: 10px;
+}
+
+.social-icons a{
+    text-decoration: none !important;
+    color: gray;
+    
+}
+.social-icons a:hover{
+    text-decoration: none !important;
+    color: #00B2B2;
+   
+}
