@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     flex: 0.35;
+    font-family: 'Josefin Sans', sans-serif;
 }
 .sidebar_header{
     display: flex;
@@ -12,9 +13,8 @@
 
 .sidebar_headerRight{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 10vw;
+    
+   
 }
 
 .sidebar_headerRight > .MuiSvgIcon-root {
@@ -24,10 +24,22 @@
 
 .sidebar_search{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items:flex-start;
     background-color: #f6f6f6;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 8px;
     height: 39px;
-    padding: 10px;
+    font-weight: lighter;
+    
+}
+
+.sidebar_search .name{
+  
+    font-weight: bolder;
+    
 }
 
 .sidebar_searchContainer {

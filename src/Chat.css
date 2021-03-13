@@ -33,7 +33,8 @@
 
 .chat_body{
     flex: 1;
-    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    /*background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');*/
+    background-image: url('https://i.imgur.com/VVPxN9C.jpg');
     background-repeat: repeat;
     background-position: center;
     padding: 30px;
@@ -79,6 +80,12 @@
     margin-bottom: 15px;
     
 }
+.chat_message:hover{
+    
+    background-color: rgba(255, 255, 255, 0.849);
+  
+    
+}
 
 .chat_name{
     position: absolute;
@@ -105,6 +112,12 @@
     width: fit-content;
     margin-bottom: 15px;
 }
+.chat_reviever:hover{
+    
+    background-color: #00b2b2c0;
+    /*background-color: rgb(215, 255, 188);*/
+    
+}
 
 .chat_footer{
     display: flex;
@@ -117,6 +130,7 @@
 .chat_footer > form {
     flex: 1;
     display: flex;
+    padding-left: 10px;
     
 }
 

@@ -29,7 +29,7 @@ function Login() {
     return (
     <div className="login">
         <div className="login_container">
-            <img src="https://i.imgur.com/fP9LyTE.png" alt="" /> 
+            <img src="https://i.imgur.com/13207e2.gif" alt="" /> 
             <div className="login_text">
                 <h1>Sign In to <span className="karl-text">Karl</span><span className="chat-text">Chat</span></h1>
             </div>

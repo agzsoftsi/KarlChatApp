@@ -1,14 +1,20 @@
-import { Avatar, Fade, IconButton } from '@material-ui/core';
-import { AttachFile, SearchOutlined } from '@material-ui/icons';
-import MoreVert from '@material-ui/icons/MoreVert';
+import { Avatar, IconButton } from '@material-ui/core';
+//import { AttachFile, SearchOutlined } from '@material-ui/icons';
+//import MoreVert from '@material-ui/icons/MoreVert';
 import React, {useEffect, useState} from 'react';
-import MicIcon from '@material-ui/icons/Mic';
-import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+//import MicIcon from '@material-ui/icons/Mic';
+//import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+import SendIcon from '@material-ui/icons/Send';
 import "./Chat.css"
 import { useParams } from 'react-router-dom';
 import db from './firebase';
 import firebase from 'firebase';
 import { useStateValue } from './StateProvider';
+import FlipMove from 'react-flip-move';
+import Brightness2Icon from '@material-ui/icons/Brightness2';
+import Brightness5Icon from '@material-ui/icons/Brightness5';
+
+
 
 function Chat() {
     const [input, setInput] = useState("");
@@ -24,13 +30,14 @@ function Chat() {
            .doc(roomId)
            .onSnapshot((snapshot) => setRoomName
            (snapshot.data().name));
-
+           
            db.collection('rooms')
            .doc(roomId).collection('messages')
            .orderBy('timestamp', 'asc')
            .onSnapshot((snapshot) =>
                setMessages(snapshot.docs.map((doc) => doc.data()))
            );
+           
        }
     }, [roomId]);
 
@@ -64,18 +71,16 @@ function Chat() {
                 </div>
                 <div className="chat_headerRight">
                     <IconButton>
-                        <SearchOutlined />
+                        <Brightness2Icon />
                     </IconButton>
                     <IconButton>
-                        <AttachFile />
+                        <Brightness5Icon />
                     </IconButton>
-                    <IconButton>
-                        <MoreVert />
-                    </IconButton>
+                    
                 </div>
             </div>
             <div className="chat_body">
-                
+                <FlipMove>
                 {messages.map(message =>(
                    <p className={`chat_message ${message.name === user.displayName && "chat_reviever"}`}>
                     <span className="chat_name">{message.name}</span>
@@ -84,18 +89,18 @@ function Chat() {
                     <span className={`${message.name === user.displayName?"tail-g":"tail"}`}></span>
                 </p>
                 
-                ))}
+                ))}</FlipMove>
                 
                 
             </div>
             
             <div className="chat_footer">
-                <InsertEmoticonIcon />
+              {/*  <InsertEmoticonIcon />*/}
                 <form>
                    <input type="text" placeholder="Type a message" value={input} onChange={e => setInput(e.target.value)}/> 
                     <button type="submit" onClick={sendMessage}>Send a message</button>
                 </form>
-                <MicIcon />
+                <SendIcon/>
             </div>
         </div>
     )
