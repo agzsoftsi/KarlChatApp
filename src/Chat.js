@@ -11,9 +11,9 @@ import db from './firebase';
 import firebase from 'firebase';
 import { useStateValue } from './StateProvider';
 import FlipMove from 'react-flip-move';
-import Brightness2Icon from '@material-ui/icons/Brightness2';
-import Brightness5Icon from '@material-ui/icons/Brightness5';
-
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import mySvgSun from './sun.svg';
+import mySvgMoon from './moon.svg';
 
 
 function Chat() {
@@ -23,6 +23,7 @@ function Chat() {
     const [roomName, setRoomName] = useState('');
     const [messages, setMessages] = useState([]);
     const [{ user }, dispatch] = useStateValue([]);
+    
 
     useEffect(() => {
        if(roomId){
@@ -59,6 +60,34 @@ function Chat() {
         setInput("");
     };
 
+    const Logoutchat = () =>{
+        window.location.reload(true);
+    };
+    
+    let theme = 2;
+    const changeTheme = () =>{
+        theme++;
+        //console.log(theme)
+        if(theme%2===0){
+            document.querySelector(".change-theme").innerHTML = `<img src=${mySvgMoon}>`;    
+            document.querySelector(".chat_header").classList.remove('bg-theme-night');
+            document.querySelector(".chat_footer").classList.remove('bg-theme-night');
+            document.querySelector(".sidebar_header").classList.remove('bg-theme-night');
+            document.querySelector(".sidebar_chats").classList.remove('bg-theme-night'); 
+        }
+        else{
+            document.querySelector(".chat_header").classList.add('bg-theme-night');
+            document.querySelector(".chat_footer").classList.add('bg-theme-night');
+            document.querySelector(".sidebar_header").classList.add('bg-theme-night');
+            document.querySelector(".sidebar_chats").classList.add('bg-theme-night');
+            document.querySelector(".change-theme").innerHTML = `<img src=${mySvgSun}>`;
+              
+             
+        
+        }
+        
+    };
+
     return (
         <div className="chat">
              <div className="chat_header">
@@ -70,12 +99,18 @@ function Chat() {
                         messages[messages.length - 1]?.timestamp?.toDate()).toUTCString()}</p>
                 </div>
                 <div className="chat_headerRight">
-                    <IconButton>
-                        <Brightness2Icon />
+
+                    <IconButton className="change-theme" title="Change Theme" onClick={changeTheme}>
+                        <img src={mySvgMoon}/>
+                        
                     </IconButton>
-                    <IconButton>
-                        <Brightness5Icon />
+
+                    <IconButton className="logout" title="Logout">
+                        <ExitToAppIcon onClick={Logoutchat} className="exit-icon"/>  
                     </IconButton>
+                 
+                   
+               
                     
                 </div>
             </div>
@@ -83,6 +118,7 @@ function Chat() {
                 <FlipMove>
                 {messages.map(message =>(
                    <p className={`chat_message ${message.name === user.displayName && "chat_reviever"}`}>
+                    
                     <span className="chat_name">{message.name}</span>
                     {message.message}
                     <span className="chat_timestamp">{new Date(message.timestamp?.toDate()).toUTCString()}</span>

@@ -87,9 +87,18 @@
 .sidebar_chats::-webkit-scrollbar-thumb {
     background-color: #00b2b27c;
     /*border-radius: 20px;*/
-    border: 1px solid black;
+    
 }
 
 .sidebar_chats::-webkit-scrollbar-track {
     border-radius: 10px;  
+}
+
+.user-avatar{
+    border: #00b2b2 solid 3px;
+}
+
+.sidebar_search p{
+    color: rgb(128, 128, 128);
+    font-size: 10px;
 }

@@ -8,8 +8,7 @@ import './Sidebar.css';
 import SidebarChat from './SidebarChat';
 import db from './firebase';
 import { useStateValue } from './StateProvider';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import firebase from 'firebase';
+//import firebase from 'firebase';
 
 
 function Sidebar() {
@@ -30,34 +29,32 @@ function Sidebar() {
         
     }, []);
 
-    const Logoutchat = () =>{
-        window.location.reload(true);
-    }
+    const userInfo = user?.displayName+"\n"+user?.email;
+ 
 
         return (
         <div className="sidebar">
             <div className="sidebar_header">
-                <Avatar src={user?.photoURL}/>
+                <Avatar src={user?.photoURL} className="user-avatar" title={userInfo}/>
                 <div className="sidebar_headerRight">
                    
-                    <IconButton>
-                    <ExitToAppIcon onClick={Logoutchat}/>  
-                    </IconButton>
-                 
+                   
                 </div>
 
             </div>
-            <div className="sidebar_search">
-            {/*console.log(user)*/}
+          {/*  <div className="sidebar_search">
+            {console.log(user)}
+
+            
             <p className="name">{user?.displayName}</p>
             <p>{user?.email}</p>
 
-               {/* <div className="sidebar_searchContainer">
+                <div className="sidebar_searchContainer">
                     <SearchOutlined />
                     <input placeholder="Search or Start new Chat" type="text"/>
-                     </div>*/}
+                     </div>
             
-            </div>
+            </div>*/}
             
             <div className="sidebar_chats">
                 <SidebarChat addNewChat/>

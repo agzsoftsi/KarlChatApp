@@ -27,3 +27,74 @@ a {
     color: black;
     
 }
+
+.add{
+    
+    background: #00b2b23a;
+    margin: 2px;
+    
+}
+
+.add .icon{
+    
+    color: #00b2b2c0;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: -7px;
+    
+}
+.add:hover{
+    background: #00b2b2c0;
+    margin: 2px;
+    color: #ffffff;
+}
+
+.add:hover .icon{
+    color: #ffffff;
+    
+}
+
+@media screen and (max-width: 752px) {
+    .sidebarChat_info, .add span{
+      display: none;
+      
+    }
+    .sidebarChat{
+        justify-content: center;
+    }
+    .chat{
+        flex: 1;
+      }
+
+      .chat_headerInfo > p{
+          font-size: small;
+      }
+      
+  }
+
+
+  .bg-theme-night{
+    background: #434343;  /* fallback for old browsers */
+    color: ghostwhite;
+    
+  }
+
+  .chat .bg-theme-night{
+      border-radius: 0px 20px 0px 0px;
+  }
+
+  .bg-theme-night .chat_footer {
+    border-radius: 0px 0px 20px 0px;
+    }
+
+  .sidebar .bg-theme-night{
+    border-radius: 20px 0px 0px 0px;
+}
+
+.sidebar_chats .bg-theme-night{
+    border-radius: 0;
+}
+
+  .bg-theme-night img{
+      color: ghostwhite;
+  }

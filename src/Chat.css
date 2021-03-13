@@ -2,6 +2,7 @@
     flex: 0.65;
     display: flex;
     flex-direction: column;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .chat_header{
@@ -28,15 +29,19 @@
 .chat_headerRight{
     display: flex;
     justify-content: space-between;
-    min-width: 100px;
+   
 }
 
 .chat_body{
     flex: 1;
     /*background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');*/
-    background-image: url('https://i.imgur.com/VVPxN9C.jpg');
+   /* background-image: url('https://i.imgur.com/VVPxN9C.jpg');
     background-repeat: repeat;
-    background-position: center;
+    background-position: center;*/
+    background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #7adbd6, #cbebeb);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #7adbd6, #cbebeb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     padding: 30px;
     overflow: scroll;
 }
@@ -78,6 +83,7 @@
     border-radius: 10px;
     width: fit-content;
     margin-bottom: 15px;
+    font-family: 'Josefin Sans', sans-serif;
     
 }
 .chat_message:hover{
@@ -111,6 +117,7 @@
     border-radius: 10px;
     width: fit-content;
     margin-bottom: 15px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 .chat_reviever:hover{
     
@@ -169,4 +176,18 @@
     border-right: 10px solid rgba(255, 255, 255, 0.575);
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent; 
+}
+
+
+.exit-icon{
+    color: #00b2b2;
+}
+
+.logout:hover{
+    background: #00b2b2;
+}
+
+.change-theme img{
+    width: 16px;
+    height: 16px;
 }
