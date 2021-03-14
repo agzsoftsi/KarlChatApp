@@ -70,17 +70,22 @@ function Chat() {
         //console.log(theme)
         if(theme%2===0){
             document.querySelector(".change-theme").innerHTML = `<img src=${mySvgMoon}>`;    
-            document.querySelector(".chat_header").classList.remove('bg-theme-night');
-            document.querySelector(".chat_footer").classList.remove('bg-theme-night');
-            document.querySelector(".sidebar_header").classList.remove('bg-theme-night');
-            document.querySelector(".sidebar_chats").classList.remove('bg-theme-night'); 
+            document.querySelector(".chat_header").classList.remove('bg-night-chat-header');
+            document.querySelector(".chat_footer").classList.remove('bg-night-chat-footer');
+            document.querySelector(".chat_body").classList.remove('bg-night-chat-body');
+            document.querySelector(".sidebar_header").classList.remove('bg-night-sidebar-header');
+            document.querySelector(".sidebar_chats").classList.remove('bg-night-sidebar-chats'); 
+            document.querySelector(".App").classList.remove('bg-night-app'); 
         }
         else{
-            document.querySelector(".chat_header").classList.add('bg-theme-night');
-            document.querySelector(".chat_footer").classList.add('bg-theme-night');
-            document.querySelector(".sidebar_header").classList.add('bg-theme-night');
-            document.querySelector(".sidebar_chats").classList.add('bg-theme-night');
             document.querySelector(".change-theme").innerHTML = `<img src=${mySvgSun}>`;
+            document.querySelector(".chat_header").classList.add('bg-night-chat-header');
+            document.querySelector(".chat_footer").classList.add('bg-night-chat-footer');
+            document.querySelector(".chat_body").classList.add('bg-night-chat-body');
+            document.querySelector(".sidebar_header").classList.add('bg-night-sidebar-header');
+            document.querySelector(".sidebar_chats").classList.add('bg-night-sidebar-chats');
+            document.querySelector(".App").classList.add('bg-night-app'); 
+            
               
              
         

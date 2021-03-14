@@ -12,6 +12,10 @@
   margin-top: -50px;
   height: 90vh;
   width: 90vw;
-  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7);
+  box-shadow: -1px 5px 10px 5px rgba(0, 0, 0, 0.7);
   border-radius: 20px;
+}
+
+.bg-night-app{
+  background-color: #ececec;
 }

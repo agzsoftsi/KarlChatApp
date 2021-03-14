@@ -20,7 +20,7 @@
 
 .sidebarChat_info {
     margin-left: 15px;
-    
+    border-radius: 0px 0px 0px 19px;
 }
 a {
     text-decoration: none !important;
@@ -72,29 +72,67 @@ a {
       
   }
 
+  .change-theme img{
+      padding: 0px 4px;
+      margin: 0;
+  }
 
-  .bg-theme-night{
-    background: #434343;  /* fallback for old browsers */
+ 
+
+
+  .bg-night-chat-header{
+    background: #0d1420;  /* fallback for old browsers */
     color: ghostwhite;
+    border-radius: 0px 19px 0px 0px;
     
   }
 
-  .chat .bg-theme-night{
-      border-radius: 0px 20px 0px 0px;
+  .bg-night-chat-header .change-theme{
+    background: #00b2b2;  /* fallback for old browsers */
+ 
+    
   }
 
-  .bg-theme-night .chat_footer {
-    border-radius: 0px 0px 20px 0px;
-    }
-
-  .sidebar .bg-theme-night{
-    border-radius: 20px 0px 0px 0px;
-}
-
-.sidebar_chats .bg-theme-night{
-    border-radius: 0;
-}
-
-  .bg-theme-night img{
-      color: ghostwhite;
+  .bg-night-chat-header .change-theme:hover{
+    background: #eeeeee;  /* fallback for old browsers */
+  
   }
+
+
+  .bg-night-chat-footer{
+    background: #0d1420;  /* fallback for old browsers */
+    color: ghostwhite;
+    border-radius: 0px 0px 19px 0px;
+    
+  }
+
+  .bg-night-sidebar-header{
+    background: #0d1420;  /* fallback for old browsers */
+    color: ghostwhite;
+    border-radius: 19px 0px 0px 0px;
+    
+  }
+
+
+  .bg-night-sidebar-chats{
+    background: #0d1420ef;  /* fallback for old browsers */
+    border-radius: 0px 0px 0px 19px;
+  }
+
+  .bg-night-sidebar-chats .sidebarChat_info h2{
+    color: #00b2b2c0
+}
+.bg-night-sidebar-chats .sidebarChat_info p{
+    color: #dddddde5
+}
+  .bg-night-sidebar-chats .add{
+    background: #ffffff; /* fallback for old browsers */
+   
+  }
+
+  .bg-night-sidebar-chats .add:hover{
+    background: #00b2b2c0; /* fallback for old browsers */
+   
+  }
+
+  
