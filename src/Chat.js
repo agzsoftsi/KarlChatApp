@@ -75,6 +75,7 @@ function Chat() {
             document.querySelector(".chat_body").classList.remove('bg-night-chat-body');
             document.querySelector(".sidebar_header").classList.remove('bg-night-sidebar-header');
             document.querySelector(".sidebar_chats").classList.remove('bg-night-sidebar-chats'); 
+            document.querySelector(".roomschat").classList.remove('bg-night-rooms');
             document.querySelector(".App").classList.remove('bg-night-app'); 
         }
         else{
@@ -84,6 +85,7 @@ function Chat() {
             document.querySelector(".chat_body").classList.add('bg-night-chat-body');
             document.querySelector(".sidebar_header").classList.add('bg-night-sidebar-header');
             document.querySelector(".sidebar_chats").classList.add('bg-night-sidebar-chats');
+            document.querySelector(".roomschat").classList.add('bg-night-rooms');
             document.querySelector(".App").classList.add('bg-night-app'); 
             
               

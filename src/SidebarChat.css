@@ -3,7 +3,7 @@
     padding: 20px;
     cursor: pointer;
     
-    border-bottom: 1px solid #f6f6f6;
+    border-bottom: 1px solid #f6f6f6b7;
     
 }
 
@@ -117,14 +117,18 @@ a {
   .bg-night-sidebar-chats{
     background: #0d1420ef;  /* fallback for old browsers */
     border-radius: 0px 0px 0px 19px;
+    
   }
 
   .bg-night-sidebar-chats .sidebarChat_info h2{
-    color: #00b2b2c0
+    color: #00b2b2;
+
 }
 .bg-night-sidebar-chats .sidebarChat_info p{
-    color: #dddddde5
+    color: #707070ef;
 }
+
+
   .bg-night-sidebar-chats .add{
     background: #ffffff; /* fallback for old browsers */
    
@@ -135,4 +139,9 @@ a {
    
   }
 
-  
+
+  .modal{
+    background: #000;
+    z-index: 1000;
+    margin: auto;
+  }

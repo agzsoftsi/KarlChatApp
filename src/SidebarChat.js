@@ -4,6 +4,8 @@ import './SidebarChat.css';
 import db from './firebase';
 import { Link } from 'react-router-dom';
 import AddIcon from '@material-ui/icons/Add';
+/*dialog*/
+
 
 
 function SidebarChat({ id, name, addNewChat }) {
@@ -29,6 +31,7 @@ function SidebarChat({ id, name, addNewChat }) {
 
     const createChat = () => {
         
+       
         const roomName = prompt("Please enter name for chat room");
 
         if (roomName){
@@ -37,11 +40,13 @@ function SidebarChat({ id, name, addNewChat }) {
                name: roomName,
            });
         }
+
+        <div className="modal"><form><h2>Please enter name for chat room</h2><input type="text" name="nameteam" id="team"></input></form></div>
     };
 
     return !addNewChat ? (
         <Link to={`/rooms/${id}`}>
-            <div className="sidebarChat">
+            <div className="sidebarChat roomschat">
             <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`} title={ name }/>
             <div className="sidebarChat_info">
                 <h2>{ name }</h2>
@@ -53,6 +58,8 @@ function SidebarChat({ id, name, addNewChat }) {
     ) : (<div onClick={ createChat } className="sidebarChat add">
         <h2><AddIcon className="icon" title="Add Chat Room"/> <span>Add Chat Room</span></h2>
     </div>);
+
+
 }
 
 export default SidebarChat
