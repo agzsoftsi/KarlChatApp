@@ -1,70 +1,206 @@
-# Getting Started with Create React App
+![](Top.fw.png)
+# Description
+It's a Simple Chat App using HTML, CSS, ReactJS, Redux, Node, Firebase, Google Authentication.
+KarlChat is an instant messaging application for smartphones and browsers, in which messages are sent and received through the Internet, this version has authentication implemented thanks to Firebase Authentication, which works by logging in with Gmail accounts. Among its functions are to create groups or chat rooms and to review the messages that have been sent.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This version is still very basic.
 
-## Available Scripts
+# Main Features
 
-In the project directory, you can run:
+- Send and receive messages
+- Create a new Chat Room.
+- Message storage in Firebase Cloud Firestore
+- Animations.
+- Authenticate with Firebase
+- Dynamic avatar for each Group
+- Two Themes(Light and Dark)
+- Full responsive.
+- Supported in Google Chrome, Firefox, Microsoft Edge browsers
 
-### `npm start`
+# Use
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### !!!Note: NODEJS should be Installed, if not, download and install it [https://nodejs.org/en/](https://nodejs.org/en/)!!!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the respository
+```sh
+git clone https://github.com/agzsoftsi/KarlChatApp.git
+```
 
-### `npm test`
+2. Enter to the code Directory
+```sh
+cd karlsapp
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Install Dependencies
+```sh
+npm install
+```
 
-### `npm run build`
+4. Run App
+```sh
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Steps to Create the App:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Create the Folder project:
+```sh
+npx create-react-app karlsChat
+```
+wait to process is completed
 
-### `npm run eject`
+2. create project on Firebase platform:
+- Go to : https://console.firebase.google.com/
+- Add project +
+> - Project name: karlsapp --> continue
+> - Google analytics Config : Default Account for firebase --> create Project
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Project Setting on Firebase:
+- Go to settings --> select de icon <> in bottom of the page.
+> - Add Firebase to your web app:
+> > - register app: karlsapp
+> > > - also set up firebase Hosting: checked
+> > > - Press Button: Register App
+> > - Add firebase SDK: next
+> > - Install firebase CLI: next
+> > - Deploy to firebase hosting: continue to console
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Firebase SDK snippet: config - "copy the code"
+- Go to project ./karlsapp/src/
+> - Create file: firebase.js
+> - paste code of config inside of the firebase.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+5. Go inside of the Project folder and Run app:
+```sh
+cd karlsapp
+npm start
+```
+6. Optional (Delete App.test.js - Delete log.svg)
+7. Clean file app.css
+8. put in first on file index.css
+```sh
+* {
+  margin: 0;
+}
+```
+9. Create components and Styles:
+- create styles base for app.js in app.css
+- create component Sidebar.js and Sidebar.css
 
-## Learn More
+10. install Material UI : https://material-ui.com/
+```sh
+npm install @material-ui/core
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+11. install Icons: https://material-ui.com/components/icons/#icons
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://material-ui.com/components/material-icons/
 
-### Code Splitting
+```sh
+npm install @material-ui/icons
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+12. put icons and stylized the sidebar top and search bar
 
-### Analyzing the Bundle Size
+13. config avatars from : https://avatars.dicebear.com/docs/http-api
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+14. create chat panel sections
 
-### Making a Progressive Web App
+15. config send and receive message
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+15. config firebase access:
+- install firebase:
+```sh
+npm install firebase
+```
+- initialize firebase inse firebase.js: copy and paste
 
-### Advanced Configuration
+```sh
+import firebase from 'firebase';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
+export { auth, provider }
+export default db;
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Create database on https://console.firebase.google.com/
+> - Select option: Cloud firestore -> create database
+> - Select Location: nam5(us-central)
+> - select in security: test mode
+Done
 
-### `npm run build` fails to minify
+- Cloud Firestore config:
+> - start collenction:
+> > - Collection ID: rooms --> next
+> > - field: name, type: string, value: Welcome Room
+> > - press Auto ID document
+Save
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- link the database from firebase to sidebar.js and show the rooms on app
+- program to add new chat room
+
+16. Create router for each rooms:
+- install:
+```sh
+npm install react-router-dom
+```
+
+17. Add Google Authentication
+> - remenber enable the authentication method from console.firebase
+
+18. Manipulate data from Google user API to the App
+
+19. Create on firebase, the message colection for each room
+> - go to start a Collection on right side of rooms and:
+> > - Collection ID: messages
+> > > - Document ID: automatic
+> > > - field: message
+> > > - type: string
+> > > - value: Welcome Guys
+
+> > > - field:name
+> > > - type: string
+> > > - value: karlgarmor
+
+
+> > > - field:timestamp
+> > > - type: timestamp
+
+Done
+
+20. programas send message 
+
+21. Deploy on heroku:
+```sh
+npm install -g create-react-app
+create-react-app my-app
+cd my-app
+git init
+heroku create -b https://github.com/mars/create-react-app-buildpack.git
+git add .
+git commit -m "react-create-app on Heroku"
+git push heroku master
+heroku open
+```
+
+
+
+## :sagittarius: Author
+
+> :man: Carlos Andres Garcia Morales
+
+> :e-mail: [E-mail](agzsoftsi@gmail.com)
+
+> :octocat: [Github](https://github.com/agzsoftsi)
+
+> :bird: [Twiiter](https://twitter.com/karlgarmor)
+
+> :blue_book: [Linkedin](https://twitter.com/karlgarmor)
+
+> :globe_with_meridians: [WebPage](https://www.agzsoftsi.tech/)
